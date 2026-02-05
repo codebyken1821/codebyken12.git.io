@@ -2,73 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Exam Answers Video</title>
+<title>Valentine Prank 💘</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: black;
-        color: white;
-        text-align: center;
-        padding-top: 40px;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffe6eb;
+    text-align: center;
+  }
 
-    h1 {
-        color: red;
-    }
+  /* Valentine screen */
+  #question {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .video-container {
-        width: 320px;
-        margin: auto;
-        position: relative;
-        cursor: pointer;
-    }
+  h1 {
+    color: #d6336c;
+    margin-bottom: 30px;
+  }
 
-    video {
-        width: 100%;
-        border-radius: 10px;
-    }
+  button {
+    padding: 15px 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+  }
 
-    .play-text {
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0,0,0,0.6);
-        padding: 10px 15px;
-        border-radius: 5px;
-        font-size: 18px;
-    }
+  #yesBtn {
+    background-color: #ff4d6d;
+  }
+
+  #noBtn {
+    background-color: #6c757d;
+  }
+
+  /* Video screen */
+  #videoScreen {
+    display: none;
+    background: black;
+    height: 100vh;
+  }
+
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 </style>
 </head>
 <body>
 
-<h1>🚨 Exam Answers Leak 🚨</h1>
-<p>Click the video to watch the answers</p>
+<!-- Valentine Question -->
+<div id="question">
+  <h1>Can you be my Valentine? 💖</h1>
+  <div>
+    <button id="yesBtn">YES 💘</button>
+    <button id="noBtn">NO 🙈</button>
+  </div>
+</div>
 
-<div class="video-container" onclick="playPrank()">
-    <video id="myVideo" muted playsinline>
-        <source src="video1.mp4" type="video/mp4">
-    </video>
-    <div class="play-text" id="playText">▶ Click to Play</div>
+<!-- Prank Video -->
+<div id="videoScreen">
+  <video id="prankVideo" autoplay loop controls>
+    <source src="yehey.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
 
 <script>
-function playPrank() {
-    const video = document.getElementById("myVideo");
-    const source = video.querySelector("source");
-    const text = document.getElementById("playText");
+  const question = document.getElementById("question");
+  const videoScreen = document.getElementById("videoScreen");
+  const video = document.getElementById("prankVideo");
 
-    // Change video source to prank video
-    source.src = "vid.mp4";
-
-    // Reload and play the new video
-    video.load();
-    video.muted = false;  // optional: unmute prank video
+  function playPrank() {
+    question.style.display = "none";
+    videoScreen.style.display = "block";
     video.play();
+  }
 
-    // Hide the play button text
-    text.style.display = "none";
-}
+  document.getElementById("yesBtn").onclick = playPrank;
+  document.getElementById("noBtn").onclick = playPrank;
 </script>
 
 </body>
