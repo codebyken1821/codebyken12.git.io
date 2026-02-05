@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
-  <title>Cat I love you</title>
+<meta charset="UTF-8">
+<title>Exam Answers Video</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    h1 {
+        color: red;
+    }
+
+    .video-container {
+        width: 320px;
+        margin: auto;
+        position: relative;
+        cursor: pointer;
+    }
+
+    video {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .play-text {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.6);
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+</style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="logo">I love you!</div>
-    <div class="cat-container">
-      <img src="https:                                                     
-    </div>
-    <button class="restart">Restart Animation</button>
-  </div>
-  <script src="script.js"></script>
+
+<h1>🚨 Exam Answers Leak 🚨</h1>
+<p>Click the video to watch the answers</p>
+
+<div class="video-container" onclick="playPrank()">
+    <video id="myVideo" muted playsinline>
+        <source src="video1.mp4" type="video/mp4">
+    </video>
+    <div class="play-text" id="playText">▶ Click to Play</div>
+</div>
+
+<script>
+function playPrank() {
+    const video = document.getElementById("myVideo");
+    const source = video.querySelector("source");
+    const text = document.getElementById("playText");
+
+    // Change video source to prank video
+    source.src = "vid.mp4";
+
+    // Reload and play the new video
+    video.load();
+    video.muted = false;  // optional: unmute prank video
+    video.play();
+
+    // Hide the play button text
+    text.style.display = "none";
+}
+</script>
+
 </body>
 </html>
